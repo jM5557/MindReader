@@ -1,4 +1,12 @@
+/* 
+*
+* WARNING: READ AT YOUR OWN DISCRETION. THE CODE
+* BELOW SPOILS THE MATHEMATICAL ILLUSION OF THIS TRICK
+*
+*/
+
 window.onload = function () {
+	//font-awesome icon symbol names to be used
 	var symbol_arr = [
 		"gamepad",
 		"flask",
@@ -10,17 +18,35 @@ window.onload = function () {
 		"fighter-jet"
 	];
 
+	//generates a random array of icons to be used for the number grid
 	var randomizedSymbolArr = function () {
+		//initilized as the default array of icon names
 		this.selectedArr = symbol_arr;
 
+		//randomly chooses a number between 0 to 8
+		//this will be used to set the computed guess'
+		//icon symbol
 		var answer = Math.floor(Math.random () * 8);
-		console.log(answer);
 
-		var h_1 = this.selectedArr.slice(0, answer);
-		var h_2 = this.selectedArr.slice(answer + 1);
+		/*
+		*
+		* COMMENTED OUT TO MAKE THE TRICK HARDER TO FIGURE OUT.
+		* NOW SOME ICONS MAY BE THE SAME AS THE ONE USED FOR
+		* MULTIPLES OF 9
+		*
+		* //splits the array of icon names into two parts excluding the name
+		* //in the `answer` position. These names will be used for all other
+		* //numbers in the grid. This means only multiples of 9 will have a specific 
+		* //icon
+		*
+		* var h_1 = this.selectedArr.slice(0, answer);
+		* var h_2 = this.selectedArr.slice(answer + 1);
+		*
+		* this.selectedArr = h_1.concat(h_2);
+		*
+		*/
 
-		this.selectedArr = h_1.concat(h_2);
-		this.answer = symbol_arr[answer];
+		this.answer = this.selectedArr[answer];
 	}
 
 	var setBoard = function () {
@@ -29,8 +55,11 @@ window.onload = function () {
 		document.getElementById('mind_read_result').style.display = "none";
 
 		for(var i = 1; i < 101; i++) {
+			//set an icon randomly
 			var randomSymbol = s_a.selectedArr[Math.floor(Math.random() * 7)];
 
+			//if the number is a multiple of 9 
+			//set a specific symbol for it
 			if(i > 0 && i%9 == 0)
 				randomSymbol = s_a.answer;
 			
@@ -49,21 +78,25 @@ window.onload = function () {
 				document.getElementById('numbers_container').appendChild(document.createElement("br"));
 		}
 
-		document.getElementById('reveal_mind_read').addEventListener('click', function () {
-			document.getElementById('mind_read_result').style.display = "block";
-			document.getElementById('mind_read_result_icon').className = "fa fa-" + s_a.answer;
-		});
+		/* EVENT LISTENERS FOR BUTTON CLICKS */
+			//reveal the computer's guess modal
+			document.getElementById('reveal_mind_read').addEventListener('click', function () {
+				document.getElementById('mind_read_result').style.display = "block";
+				document.getElementById('mind_read_result_icon').className = "fa fa-" + s_a.answer;
+			});
 
-		document.getElementById('mind_read_result').addEventListener('click', function () {
-			this.style.display = "none";
-		});
+			//close the computer's guess modal
+			document.getElementById('mind_read_result').addEventListener('click', function () {
+				this.style.display = "none";
+			});
 	}
 
-	setBoard();
-
+	/* RESETS THE STATE OF THE NUMBER BOARD SCRAMBLING THE ICONS */
 	document.getElementById('reset_board').addEventListener('click', function () {
 		document.getElementById('numbers_container').innerHTML = "";
 		setBoard();
 		document.getElementById('mind_read_result').className = "";
 	});
+
+	setBoard(); //initial number board set
 }

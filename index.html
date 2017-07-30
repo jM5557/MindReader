@@ -2,7 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name = "viewport" content = "width=device-width,initial-scale=1">
+
 	<title>Mind Reader</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
 
@@ -11,19 +15,26 @@
 <body>
 	<div id = "instructions">
 		<h2>Instructions:</h2>
-		Choose any 2 or 3 digit number. Memorize it; don't tell a soul.
-			<br />
-		Next, add the digits together.
-			<br />
-		Then subtract the result from the original number.
-			<br />
-		Lastly look up the icon of the final result and click 'Read My Mind!'
-			<br />
-		Our highly advanced machine-learning, AI will read your mind and guess the icon that
+		<ol>
+			<li>
+				Choose any 2 or 3 digit number. Memorize it; don't tell a soul.
+			</li>
+			<li>
+				Next, add the digits together.
+			</li>
+			<li>
+				Then subtract the result from the original number.
+			</li>
+			<li>
+				Lastly look up the icon of the final result and click 'Read My Mind!'
+			</li>
+		</ol>
+
+		Our highly advanced, automated, machine-learning AI will read your mind and guess the icon that
 		you just looked up.
-			<br />
-		Note: If the computer's guess is wrong there's a chance it knows your mind better than you do!
-		Recheck your math and try again.
+		
+		<p class = "note">Note: If the computer's guess is wrong there's a chance it knows your mind better than you do!
+		Recheck your math and try again.</p>
 	</div>
 	<div id = "numbers_container">
 	</div>
@@ -40,5 +51,9 @@
 	<div id = "mind_read_result">
 		<i id = "mind_read_result_icon"></i>
 	</div>
+
+	<footer>
+		Made By Javier Minchala | <a href = "https://github.com/jm5557/MindReader">Github Repo</a>
+	</footer>
 </body>
 </html>
