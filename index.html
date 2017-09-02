@@ -10,50 +10,58 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
 
-	<script type="text/javascript" src = "assets/js/main.min.js"></script>
+	<script type="text/javascript" src = "assets/js/main.js"></script>
 </head>
 <body>
-	<div id = "instructions">
-		<h2>Instructions:</h2>
-		<ol>
-			<li>
-				Choose any 2 or 3 digit number. Memorize it; don't tell a soul.
-			</li>
-			<li>
-				Next, add the digits together.
-			</li>
-			<li>
-				Then subtract the result from the original number.
-			</li>
-			<li>
-				Lastly look up the icon of the final result and click 'Read My Mind!'
-			</li>
-		</ol>
+	<div id = "instructions-wrapper">
+		<div id = "instructions">
+			<button id = "display-grid"><i class="fa fa-bars" aria-hidden="true"></i></button>
+			<img alt = "Mind Reader crystal ball logo" src = "assets/images/logo-top.png">
+			<h2>INSTRUCTIONS</h2>
+			<ol>
+				<li>
+					Choose any 2 or 3 digit number. Memorize it; don't tell a soul.
+				</li>
+				<li>
+					Next, add the digits together.
+				</li>
+				<li>
+					Then subtract the result from the original number.
+				</li>
+				<li>
+					Lastly look up the icon of the final result and click 'Read My Mind!'
+				</li>
+			</ol>
 
-		Our highly advanced, automated, machine-learning AI will read your mind and guess the icon that
-		you just looked up.
-		
-		<p class = "note">Note: If the computer's guess is wrong there's a chance it knows your mind better than you do!
-		Recheck your math and try again.</p>
+			Our highly advanced, automated, machine-learning AI will read your mind and guess the icon that
+			you just looked up.
+			
+			<p class = "note">Note: If the computer's guess is wrong there's a chance it knows your mind better than you do!
+			Recheck your math and try again.</p>
+		</div>
+
+		<div id = "controls">
+			<button id = "reveal_mind_read">
+				Read My Mind!
+			</button>
+			<button id = "reset_board">
+				Reset Board
+			</button>
+		</div>
+
+		<footer>
+			Made By Javier Minchala | <a href = "https://github.com/jm5557/MindReader">Github Repo</a>
+		</footer>
 	</div>
+
 	<div id = "numbers_container">
-	</div>
-	
-	<div id = "controls">
-		<button id = "reveal_mind_read">
-			Read My Mind!
-		</button>
-		<button id = "reset_board">
-			Reset Board
-		</button>
+		<button id="close-grid"><i class="fa fa-times" aria-hidden="true"></i></button>
+		<div id = "numbers_wrapper">
+		</div>
 	</div>
 	
 	<div id = "mind_read_result">
 		<i id = "mind_read_result_icon"></i>
 	</div>
-
-	<footer>
-		Made By Javier Minchala | <a href = "https://github.com/jm5557/MindReader">Github Repo</a>
-	</footer>
 </body>
 </html>

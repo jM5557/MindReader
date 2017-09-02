@@ -31,8 +31,8 @@ window.onload = function () {
 		/*
 		*
 		* COMMENTED OUT TO MAKE THE TRICK HARDER TO FIGURE OUT.
-		* NOW SOME ICONS MAY BE THE SAME AS THE ONE USED FOR
-		* MULTIPLES OF 9
+		* NOW OTHER NUMBERS CAN HAVE THE SAME ICON AS THE ONE USED
+		* FOR MULTIPLES OF 9
 		*
 		* //splits the array of icon names into two parts excluding the name
 		* //in the `answer` position. These names will be used for all other
@@ -72,10 +72,10 @@ window.onload = function () {
 
 
 			d.appendChild(symbol);
-			document.getElementById('numbers_container').appendChild(d);
+			document.getElementById('numbers_wrapper').appendChild(d);
 
 			if(i%5 == 0)
-				document.getElementById('numbers_container').appendChild(document.createElement("br"));
+				document.getElementById('numbers_wrapper').appendChild(document.createElement("br"));
 		}
 
 		/* EVENT LISTENERS FOR BUTTON CLICKS */
@@ -93,10 +93,20 @@ window.onload = function () {
 
 	/* RESETS THE STATE OF THE NUMBER BOARD SCRAMBLING THE ICONS */
 	document.getElementById('reset_board').addEventListener('click', function () {
-		document.getElementById('numbers_container').innerHTML = "";
+		document.getElementById('numbers_wrapper').innerHTML = "";
 		setBoard();
 		document.getElementById('mind_read_result').className = "";
 	});
 
 	setBoard(); //initial number board set
+
+	/* UI Stuff */
+
+	document.getElementById('display-grid').addEventListener('click', function () {
+		document.getElementById('numbers_container').className = "display";
+	});
+
+	document.getElementById('close-grid').addEventListener('click', function () {
+		document.getElementById('numbers_container').className = "";
+	});
 }
