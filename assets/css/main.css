@@ -206,6 +206,8 @@ footer {
 
 	#instructions-wrapper {
 		padding: 4vw;
+		width: 92vw;
+		margin: auto;
 	}
 
 	#instructions-wrapper img {
