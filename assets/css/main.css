@@ -14,6 +14,8 @@ body, html {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-image: -webkit-linear-gradient(350deg, #90F7EC, #32CCBC);
+	background-image: -o-linear-gradient(350deg, #90F7EC, #32CCBC);
 	background-image: linear-gradient(100deg, #90F7EC, #32CCBC);
     background-image: -webkit-linear-gradient(100deg, #90F7EC, #32CCBC);
     background-image: -o-linear-gradient(100deg, #90F7EC, #32CCBC);
@@ -120,12 +122,18 @@ button, #numbers_container {
 	padding: 2.5vw 4vw;
 	cursor: pointer;
 	font-family: 'Open Sans', sans-serif;
+	-webkit-transition: -webkit-transform 0.26s ease-out;
+	transition: -webkit-transform 0.26s ease-out;
+	-o-transition: transform 0.26s ease-out;
 	transition: transform 0.26s ease-out;
+	transition: transform 0.26s ease-out, -webkit-transform 0.26s ease-out;
 	color: #383939;
 }
 
 #controls button:hover {
-	transform: scale(1.10);
+	-webkit-transform: scale(1.10);
+	    -ms-transform: scale(1.10);
+	        transform: scale(1.10);
 }
 
 #mind_read_result {
@@ -172,9 +180,12 @@ button, #numbers_container {
 }
 
 #close-grid {
-	border: solid thin #48ecdd;
-	background-color: #4ad3c5;
-	right: 2.5%;
+	right: 1.5%;
+	top: 1%;
+	height: 25px;
+	width: 25px;
+	border: none;
+	background-color: transparent;
 }
 
 footer {
@@ -195,18 +206,46 @@ footer {
 
 	#instructions-wrapper {
 		padding: 4vw;
-		margin-bottom: 2rem;
+	}
+
+	#instructions-wrapper img {
+		min-width: 115px;
+		max-width: 115px;
+	}
+
+	#instructions ol {
+		margin: 15px 5px;
+		padding: 10px 5px;
+		font-size: 0.85rem;
+		line-height: 1.2rem;
+	}
+
+	.note {
+		padding: 7.5px 7.5px;
+		background-color: pink;
+		border: solid 1px #f48a8a;
+		margin: 15px auto 0px auto;
+		font-size: 0.75rem;
 	}
 
 	#numbers_container {
-		transform: translateX(-100vw);
-		transition: transform 0.65s ease;
-		box-shadow: -2px 0px 3px rgba(0.75, 0.85, 0.75, 0.75);
+		-webkit-transform: translateX(-100vw);
+		    -ms-transform: translateX(-100vw);
+		        transform: translateX(-100vw);
+		-webkit-transition: -webkit-transform 1s ease;
+		transition: -webkit-transform 1s ease;
+		-o-transition: transform 1s ease;
+		transition: transform 1s ease;
+		transition: transform 1s ease, -webkit-transform 1s ease;
+		-webkit-box-shadow: -2px 0px 3px rgba(0.75, 0.85, 0.75, 0.75);
+		        box-shadow: -2px 0px 3px rgba(0.75, 0.85, 0.75, 0.75);
 		width: 98vw;
 	}
 
 	#numbers_container.display {
-		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		    -ms-transform: translateX(0);
+		        transform: translateX(0);
 	}
 
 	#display-grid, #close-grid {
@@ -214,7 +253,8 @@ footer {
 	}
 
 	footer {
-		margin-top: 0.5rem;
-		margin-bottom: 2rem;
+		margin-top: 1.2rem;
+		margin-bottom: 8vw;
+		height: 2vw;
 	}
 }
